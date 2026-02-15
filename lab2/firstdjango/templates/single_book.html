@@ -1,0 +1,29 @@
+<!-- templates/single_book.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ book.title }} - Library
+{% endblock %}
+
+{% block content %}
+    <article class="book">
+        <header>
+            <h1>{{ book.title }}</h1>
+            <p class="author">by {{ book.author }}</p>
+        </header>
+        
+        <section class="book-metadata">
+            <h2>Book Information</h2>
+            <ul>
+                <li><strong>Year Published:</strong> {{ book.year }}</li>
+                <li><strong>Price:</strong> ${{ book.price }}</li>
+                <li><strong>Catalog ID:</strong> {{ book.id }}</li>
+            </ul>
+        </section>
+        
+        <section class="book-synopsis">
+            <h2>Synopsis</h2>
+            <p>{{ book.synopsis }}</p>
+        </section>
+    </article>
+{% endblock %}

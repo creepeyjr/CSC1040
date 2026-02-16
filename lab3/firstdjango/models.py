@@ -12,3 +12,11 @@ class Book(models.Model):
     def __str__(self):
         return self.title
         # Display model nicely in Django interface.
+
+'''
+class Author(models.Model):
+    id = models.AutoField(primary_key = True)  # Automatically increments every book with a unique id
+    first_name = models.CharField(max_length = 100)  # Names are strings
+    last_name = models.CharField(max_length = 100)  # Names are strings
+    birth_year = models.IntegerField()  # Years are whole integers
+'''

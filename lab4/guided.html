@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<!-- 
+Live server on ubuntu article :
+https://greyboyle.hashnode.dev/how-to-run-a-live-server-on-ubuntu-quick-guide
+
+Command inside directory with the html :
+live-server .
+-->
+
+<head>
+    <title>DOM Example</title>
+</head>
+<body>
+    <h1 id="main-heading">Original heading</h1>
+    <input type="text" id="name-input" placeholder="Enter a name">
+    <button id="greet-btn">Greet</button>
+    <p id="output"></p>
+
+    <script>
+        // 1. Select elements by their id
+        const heading = document.querySelector("#main-heading");
+        const input   = document.querySelector("#name-input");
+        const button  = document.querySelector("#greet-btn");
+        const output  = document.querySelector("#output");
+
+        // 2. Modify an element immediately when the page loads
+        heading.innerHTML = "Hello from JavaScript";
+
+        // 3. Respond to a button click
+        button.addEventListener("click", function () {
+            const name = input.value;
+            output.innerHTML = "Hello, " + name + "!";
+        });
+    </script>
+</body>
+</html>

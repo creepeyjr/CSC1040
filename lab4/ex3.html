@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head><title>Exercise 2.1</title></head>
+<body>
+    <h2 id="title">Page Title</h2>
+
+    <p class="info">First paragraph</p>
+    <p class="info">Second paragraph</p>
+    <p class="info">Third paragraph</p>
+
+    <ul id="item-list">
+        <li>Item A</li>
+        <li>Item B</li>
+        <li>Item C</li>
+    </ul>
+
+    <script>
+        // Your code goes here
+
+        // 1. Selecting Elements by id
+        const heading = document.querySelector("#title");
+        const paragraphs = document.querySelectorAll(".info")  // Return NodeList of
+
+        // 2, Modifying
+        heading.innerHTML = "Hello, Cian!";
+
+        // Loop and update paragraphs
+        for (paragraph of paragraphs) {
+            const current = paragraph.innerHTML;
+            paragraph.innerHTML = current + " - updated";
+        }
+
+
+
+
+    </script>
+</body>
+</html>

@@ -27,7 +27,6 @@ for (let i = 0; i < students.length; i++) {
     console.log(students[i]["name"],":", students[i]["grade"]);
 }
 
-
 // Call function
 let passes = students.filter(passCheck);
 //console.log("passes :", passes);
@@ -36,4 +35,8 @@ let nameOnly = passes.map(gradeStrip);
 console.log("Passing students :",nameOnly.length);
 console.log("Passing names :", nameOnly);
 
-const totalGrade = students.reduce()
+// Reduce function
+
+// Calculate the class average
+const total = students.reduce((sum, s) => sum + s.grade, 0);
+console.log("Class average :", total / students.length );

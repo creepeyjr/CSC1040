@@ -35,5 +35,4 @@ for (let i = 0; i < marks.length; i++) {
     else {
         console.log(marks[i],"- Fail")
     }
-
 }

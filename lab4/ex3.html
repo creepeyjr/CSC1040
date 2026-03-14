@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><title>Exercise 2.1</title></head>
+<head><title>Exercise 2.1 (Lab ex 3)</title></head>
 <body>
     <h2 id="title">Page Title</h2>
 
@@ -14,13 +14,17 @@
         <li>Item C</li>
     </ul>
 
+    <p id="display-count">Amount of list items :</p>
+
     <script>
         // Your code goes here
 
         // 1. Selecting Elements by id
         const heading = document.querySelector("#title");
-        const paragraphs = document.querySelectorAll(".info")  // Return NodeList of
+        const paragraphs = document.querySelectorAll(".info");  // Return NodeList of
+        const list = document.querySelectorAll(".item-list");
 
+        const result = document.querySelector("#display-count");
         // 2, Modifying
         heading.innerHTML = "Hello, Cian!";
 
@@ -30,8 +34,14 @@
             paragraph.innerHTML = current + " - updated";
         }
 
-
-
+        // Count amount of list items
+        let count = 0;
+        for (item of list) {
+            count++;
+        }
+        const countText = result.innerHTML;
+        result.innerHTML = countText, count;
+        console.log("Amount of items inside of list :", count);
 
     </script>
 </body>

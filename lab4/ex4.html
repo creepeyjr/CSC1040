@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ex 4</title>
-</head>
-<body>
-    
-    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex 4</title>
+    </head>
+    <body>
+        
+        <h1>Cian's Page</h1>
 
-</body>
+        <input id="my-input" placeholder="Enter text here.">
+
+        <button type="button" onclick="submit()">Add</button>
+
+        <ul id="#my-list">
+
+        </ul>
+
+        <!-- Place text here -->
+        <script>
+
+            function submit() {
+                let text = document.getElementById("my-input").value;
+
+                if (text.length >= 1) {
+                    const li = document.createElement("li");
+                    li.innerHTML = text;
+                    document.querySelector("ul").appendChild(li)
+                
+                    const input = document.querySelector("#my-input");
+                    input.value = "";
+                }
+            }
+        </script>
+
+    </body>
 </html>

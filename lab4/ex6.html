@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- Form -->
+        <form>
+            <h2>Cian's Form</h2>
+            <label>Name</label>
+            <input type="text" id="name-box">
+            <span id="name-error"></span>
+            <br>
+
+            <label>Age</label>
+            <input type="number" id="age-box">
+            <span id="age-error"></span>
+            <br>
+
+            <label>Email</label>
+            <input type="email" id="email-box">
+            <span id="email-error"></span>
+            <br>
+
+            <label>Submission Button</label>
+            <input type="submit" onclick="submitFunc()">
+            <br>
+        </form>
+
+        <p id="confirmMess"></p>
+
+        <script>
+
+            // Select elements by ID
+            const nameElement = document.querySelector("#name-box");
+            const ageElement = document.querySelector("#age-box");
+            const emailElement = document.querySelector("#email-box");
+            const confirmationElement = document.querySelector("#confirmMess");
+
+
+            // Custom Functions
+            function submitFunc() {
+                event.preventDefault()  // Prevent submit button reloading page
+
+                let errorState = false; 
+
+                // Clear previous error messages
+                document.querySelector("#name-error").innerHTML = "";
+                document.querySelector("#age-error").innerHTML = "";
+                document.querySelector("#email-error").innerHTML = "";
+                
+
+                // Check see if inputs are valid
+                if (nameElement.value <= "") {
+                    document.querySelector("#name-error").innerHTML = "Name is required";
+                    errorState = true;  // Change errorState to say that an error occured
+                }
+                const val = parseInt(ageElement.value);
+                if (val < 18 || val > 120 || ageElement.value <= "") {
+                    document.querySelector("#age-error").innerHTML = "Age must be between 18 and 120.";
+                    errorState = true;
+                }
+                if (emailElement.value <= "" || emailElement.value.includes("@") == false) {
+                    document.querySelector("#email-error").innerHTML = "Email must include '@' and be not empty";
+                    errorState = true;
+                }
+
+                if (errorState == false) {
+                    const message = "Registration for ";
+                    confirmationElement.innerHTML = message + nameElement.value + ", aged " + ageElement.value + ".";
+                }
+            }
+        </script>
+
+    </body>
+</html>

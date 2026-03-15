@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+    
+        <div id="div-para">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat tempora officiis officia. Necessitatibus, reiciendis placeat ullam quaerat neque, quod dolore, consequatur beatae ipsa natus delectus cupiditate sed. Similique, adipisci temporibus.</p>
+        </div>
+
+        <button type="button" id="hideButton" onclick="hideFunction()">Hide This.</button>
+
+        <script>
+
+            // Selecting functions by id
+            let divElement = document.getElementById("div-para");
+            let buttonElement = document.getElementById("hideButton");
+
+            function hideFunction() {
+
+                if (divElement.style.display == "none") {
+                    divElement.style.display = "";
+                    buttonElement.innerHTML = "Hide This.";
+                    
+                }
+                else {
+                    divElement.style.display = "none";
+                    buttonElement.innerHTML = "Show This.";
+                
+                }
+                
+            }
+
+        </script>
+
+    </body>
+</html>
